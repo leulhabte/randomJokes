@@ -1,8 +1,20 @@
 import React from 'react';
-import useStyles from './Styling';
 import {ThumbUpAlt, ThumbDownAlt} from '@material-ui/icons';
-import {withStyles} from '@material-ui/styles'
 import { Card, CardHeader, CardContent, CardActions, Avatar, Typography, IconButton, Tooltip, Divider, Box } from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme)=>({
+    up:{
+        color: 'blue'
+    },
+    down:{
+        color: 'red'
+    },
+    votes:{
+        fontSize: '13px',
+        fontWeight: 'bold'
+    },
+}));
 
 const Cards =({jokes, voteJoke, date})=>{
     const classes = useStyles();
@@ -32,4 +44,4 @@ const Cards =({jokes, voteJoke, date})=>{
 
 }
 
-export default withStyles(useStyles)(Cards);
+export default Cards;

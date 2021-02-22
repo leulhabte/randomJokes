@@ -1,6 +1,6 @@
 import React from 'react';
 import { Skeleton } from '@material-ui/lab';
-import { Card, CardHeader, CardContent, CardActions, Avatar } from '@material-ui/core';
+import { Card, CardHeader, CardContent } from '@material-ui/core';
 
 const Loading = () => {
     return (

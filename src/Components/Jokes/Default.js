@@ -1,6 +1,16 @@
 import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
-import useStyles from './Styling';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme)=>({
+    cardDefault:{
+        height: '15rem',
+        width: '90%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+}));
 
 const Default = () => {
     const classes = useStyles();
