@@ -4,6 +4,7 @@ import Card from './Card'
 import Loading from "./Loading";
 import SnackBar from '../SnackBar/SnackBars';
 import Default from './Default';
+import {withStyles} from '@material-ui/styles'
 import { Container, Grid, Button, Box } from "@material-ui/core";
 import axios from 'axios';
 
@@ -98,4 +99,4 @@ const Jokes = () => {
 
 }
 
-export default Jokes;
+export default withStyles(useStyles)(Jokes);
