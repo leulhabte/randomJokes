@@ -6,10 +6,22 @@ import SnackBar from '../SnackBar/SnackBars';
 import Default from './Default';
 import {withStyles} from '@material-ui/styles'
 import { Container, Grid, Button, Box } from "@material-ui/core";
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
-const Jokes = () => {
-    const classes = useStyles();
+const styles = {
+    btn:{
+        color: 'white',
+        backgroundColor: 'rgb(111, 190, 230)',
+        marginTop: '2rem',
+        
+        height: '3rem',
+        width: '40%'
+    },
+}
+
+const Jokes = (props) => {
+    const {classes} = props;
     const [data, setData] = useState({});
     const [load, setLoad] = useState(true);
     const [display, setDisplay] = useState(true);
@@ -99,4 +111,8 @@ const Jokes = () => {
 
 }
 
-export default withStyles(useStyles)(Jokes);
+Jokes.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Jokes);
