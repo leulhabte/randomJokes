@@ -19,12 +19,12 @@ const Cards =({jokes, voteJoke, date})=>{
               <Box height={6}/>
               <Divider/>
               <Box height={6}/>
-              <Typography className={classes.votes}>Upvote {jokes.upvotes}</Typography>
-              <Typography className={classes.votes}>Downvote {jokes.downvotes}</Typography>
+              <Typography classes={{root: classes.votes}}>Upvote {jokes.upvotes}</Typography>
+              <Typography classes={{root: classes.votes}}>Downvote {jokes.downvotes}</Typography>
           </CardContent>
           <CardActions>
-              <IconButton onClick={()=>{voteJoke('upvote', jokes.id)}}><Tooltip title="Upvote"><ThumbUpAlt className={classes.up}/></Tooltip></IconButton>
-              <IconButton onClick={()=>{voteJoke('downvote', jokes.id)}}><Tooltip title="DownVote"><ThumbDownAlt className={classes.down}/></Tooltip></IconButton>
+              <IconButton onClick={()=>{voteJoke('upvote', jokes.id)}}><Tooltip title="Upvote"><ThumbUpAlt classes={{root: classes.up}}/></Tooltip></IconButton>
+              <IconButton onClick={()=>{voteJoke('downvote', jokes.id)}}><Tooltip title="DownVote"><ThumbDownAlt classes={{root: classes.down}}/></Tooltip></IconButton>
           </CardActions>
       </Card>  
     );

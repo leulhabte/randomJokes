@@ -28,7 +28,7 @@ const Jokes = () => {
             setLoad(true);
             var options = {
                 method: 'GET',
-                url: 'https://joke3.p.rapidapi.com/v1/joke',
+                url: 'https://joke3.p.rapidapi.com/v1/joke/',
                 headers: {
                     'x-rapidapi-key': '9214729ffemsh878f61adb83658fp1c2b1ejsn6014ee49d429',
                     'x-rapidapi-host': 'joke3.p.rapidapi.com'
@@ -64,7 +64,7 @@ const Jokes = () => {
         } catch (e) {
             setLoad(false);
             setDisplay(true);
-            setMessage("Error Fetching data");
+            setMessage("Something went wrong");
             setMessageType('error')
             setOpen(true);
         }
@@ -85,7 +85,7 @@ const Jokes = () => {
             <Box height={50} />
             <Grid container spacing={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Grid item md={6} xs={10}>
-                    <Button color="primary" className={classes.btn} onClick={fetchApi} >Get Random Joke</Button>
+                    <Button color="primary" classes={{root: classes.btn}} onClick={fetchApi} >Get Random Joke</Button>
                 </Grid>
                 {!display ? <Grid item md={6} xs={10}>
                     {!load && <Card jokes={data} voteJoke={voteJoke} date={date}/>}
