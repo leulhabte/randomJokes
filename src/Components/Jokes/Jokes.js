@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import useStyles from './Styling';
+// import useStyles from './Styling';
 import Card from './Card'
 import Loading from "./Loading";
 import SnackBar from '../SnackBar/SnackBars';
 import Default from './Default';
 import {withStyles} from '@material-ui/styles'
+import {makeStyles} from '@material-ui/core/styles';
 import { Container, Grid, Button, Box } from "@material-ui/core";
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -20,8 +21,39 @@ const styles = {
     },
 }
 
+const useStyles = makeStyles((theme)=>({
+    btn:{
+        color: 'white',
+        backgroundColor: 'rgb(111, 190, 230)',
+        marginTop: theme.spacing(2),
+        '&:hover':{
+            backgroundColor: 'rgb(39, 158, 218)'
+        },
+        height: '3rem',
+        width: '40%'
+    },
+    up:{
+        color: 'blue'
+    },
+    down:{
+        color: 'red'
+    },
+    votes:{
+        fontSize: '13px',
+        fontWeight: 'bold'
+    },
+    cardDefault:{
+        height: '15rem',
+        width: '90%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+}));
+
 const Jokes = (props) => {
-    const {classes} = props;
+    // const {classes} = props;
+    const classes = useStyles();
     const [data, setData] = useState({});
     const [load, setLoad] = useState(true);
     const [display, setDisplay] = useState(true);
@@ -111,8 +143,9 @@ const Jokes = (props) => {
 
 }
 
-Jokes.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+// Jokes.propTypes = {
+//     classes: PropTypes.func.isRequired,
+// };
 
-export default withStyles(styles)(Jokes);
+export default Jokes;
+// export default withStyles(useStyles)(Jokes);
